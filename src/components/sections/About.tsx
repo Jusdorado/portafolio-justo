@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import content from '@/data/content.json';
+import logoImage from '../../../public/images/logo.png';
 
 const About = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -111,7 +112,7 @@ const About = () => {
             {/* Profile Logo */}
             <div className="absolute inset-4 bg-white rounded-xl overflow-hidden">
               <Image
-                src="/images/logo.png"
+                src={logoImage}
                 alt="Justo García Logo"
                 width={200}
                 height={200}
