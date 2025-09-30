@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import content from '@/data/content.json';
-import logoImage from '../../../public/images/logo.png';
+import logoImage from '@/public/images/logo.png';
 
 const About = () => {
   const { ref, isVisible } = useScrollReveal();
