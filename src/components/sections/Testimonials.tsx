@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Quote, Star, ChevronLeft, ChevronRight,
+} from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useState } from 'react';
 import content from '@/data/content.json';
@@ -63,7 +65,9 @@ const Testimonials = () => {
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-moka-700 font-serif leading-relaxed mb-8 max-w-3xl mx-auto">
-              "{testimonials[currentIndex]?.content || ''}"
+              "
+              {testimonials[currentIndex]?.content || ''}
+              "
             </blockquote>
 
             {/* Author */}

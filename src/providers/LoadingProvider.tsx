@@ -1,6 +1,13 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+  useMemo,
+} from 'react';
 
 interface LoadingContextType {
   isLoading: boolean;
@@ -33,8 +40,13 @@ export const LoadingProvider: React.FC<LoadingProviderProps> = ({ children }) =>
     return () => clearTimeout(timer);
   }, []);
 
+  const contextValue = useMemo(() => ({
+    isLoading,
+    setIsLoading,
+  }), [isLoading]);
+
   return (
-    <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+    <LoadingContext.Provider value={contextValue}>
       {children}
     </LoadingContext.Provider>
   );

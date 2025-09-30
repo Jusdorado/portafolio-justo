@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export async function GET() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://justogarciaferrandez.com';
-  
+
   const robots = `User-agent: *
 Allow: /
 

@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowUp, Github, Mail, MapPin, Heart } from 'lucide-react';
+import {
+  ArrowUp, Github, Mail, MapPin, Heart,
+} from 'lucide-react';
 import { trackEvent, trackExternalLink } from '@/lib/analytics';
 import content from '@/data/content.json';
 import CoffeeLogo from '../ui/CoffeeLogo';
@@ -43,8 +45,8 @@ const Footer = () => {
     <footer className="bg-gradient-moka text-moka-50 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-moka-300/10 rounded-full blur-xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-moka-300/10 rounded-full blur-xl" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -61,9 +63,9 @@ const Footer = () => {
               >
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 flex items-center justify-center mr-4">
-                    <CoffeeLogo 
-                      size="small" 
-                      className="scale-150 hover:scale-[1.7] transition-all duration-500 hover:rotate-3" 
+                    <CoffeeLogo
+                      size="small"
+                      className="scale-150 hover:scale-[1.7] transition-all duration-500 hover:rotate-3"
                     />
                   </div>
                   <div>
@@ -73,9 +75,9 @@ const Footer = () => {
                     <p className="text-gold-400 text-sm">{personal.title}</p>
                   </div>
                 </div>
-                
+
                 <p className="text-moka-100 leading-relaxed mb-6 max-w-md">
-                  Especializado en inteligencia artificial, automatización de procesos y desarrollo web. 
+                  Especializado en inteligencia artificial, automatización de procesos y desarrollo web.
                   Creando soluciones eficientes que impulsan el crecimiento de tu negocio.
                 </p>
 
@@ -83,7 +85,7 @@ const Footer = () => {
                 <div className="space-y-3">
                   <div className="flex items-center text-sm text-moka-100">
                     <Mail className="w-4 h-4 mr-3 text-gold-400" />
-                    <a 
+                    <a
                       href={`mailto:${personal.email}`}
                       className="hover:text-gold-400 transition-colors duration-300"
                       onClick={() => trackEvent('email_click', { location: 'footer' })}
@@ -132,7 +134,7 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 <h4 className="text-lg font-semibold text-moka-50 mb-6">Sígueme</h4>
-                
+
                 {/* Social Links */}
                 <div className="flex space-x-4 mb-8">
                   <button
@@ -146,7 +148,7 @@ const Footer = () => {
                     className="w-10 h-10 bg-moka-600/50 backdrop-blur-sm rounded-lg flex items-center justify-center text-moka-100 hover:bg-gold-400/20 hover:text-gold-400 transition-all duration-300 hover:scale-110"
                   >
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
                   </button>
                   <button
@@ -180,9 +182,15 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center text-sm text-moka-100 mb-4 md:mb-0">
-              <span>© {currentYear} {personal.name}. Todos los derechos reservados.</span>
+              <span>
+                ©
+                {currentYear}
+                {' '}
+                {personal.name}
+                . Todos los derechos reservados.
+              </span>
             </div>
-            
+
             <div className="flex items-center text-sm text-moka-100">
               <span>Hecho con</span>
               <Heart className="w-4 h-4 mx-1 text-red-400 fill-current animate-pulse" />

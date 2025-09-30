@@ -22,10 +22,10 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
-      const sections = navigation.map(item => item.href.substring(1));
-      const currentSection = sections.find(section => {
+      const sections = navigation.map((item) => item.href.substring(1));
+      const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -33,7 +33,7 @@ const Header = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -176,7 +176,7 @@ const Header = () => {
                     {item.name}
                   </motion.button>
                 ))}
-                
+
                 <motion.button
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

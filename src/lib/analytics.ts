@@ -15,7 +15,7 @@ export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 // Track events
 export const trackEvent = (
   eventName: string,
-  parameters?: Record<string, any>
+  parameters?: Record<string, any>,
 ) => {
   if (typeof window !== 'undefined' && window.gtag && GA_MEASUREMENT_ID) {
     window.gtag('event', eventName, {

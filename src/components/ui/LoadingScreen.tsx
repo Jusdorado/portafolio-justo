@@ -55,7 +55,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                 transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                 className="absolute inset-0 w-40 h-40 rounded-full border-2 border-gold-400/30"
               />
-              
+
               {/* Logo idéntico al header pero grande */}
               <CoffeeLogo size="large" />
             </div>
@@ -90,9 +90,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           >
             <div className="flex items-center justify-between mb-2">
               <span className="text-gold-300 text-sm font-medium">Cargando</span>
-              <span className="text-gold-300 text-sm font-medium">{Math.round(progress)}%</span>
+              <span className="text-gold-300 text-sm font-medium">
+                {Math.round(progress)}
+                %
+              </span>
             </div>
-            
+
             <div className="w-full bg-moka-700/50 rounded-full h-2 overflow-hidden backdrop-blur-sm border border-gold-400/20">
               <motion.div
                 initial={{ width: 0 }}
@@ -123,41 +126,41 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Partículas fijas para evitar problemas de hidratación */}
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -100, 0],
-                opacity: [0, 0.6, 0]
+                opacity: [0, 0.6, 0],
               }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
                 delay: 0,
-                ease: 'easeOut'
+                ease: 'easeOut',
               }}
               className="absolute w-1 h-1 bg-gold-400/40 rounded-full top-1/4 left-1/4"
             />
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -80, 0],
-                opacity: [0, 0.4, 0]
+                opacity: [0, 0.4, 0],
               }}
               transition={{
                 duration: 5,
                 repeat: Infinity,
                 delay: 1,
-                ease: 'easeOut'
+                ease: 'easeOut',
               }}
               className="absolute w-1 h-1 bg-gold-300/30 rounded-full top-1/3 right-1/3"
             />
             <motion.div
-              animate={{ 
+              animate={{
                 y: [0, -120, 0],
-                opacity: [0, 0.5, 0]
+                opacity: [0, 0.5, 0],
               }}
               transition={{
                 duration: 3.5,
                 repeat: Infinity,
                 delay: 2,
-                ease: 'easeOut'
+                ease: 'easeOut',
               }}
               className="absolute w-1 h-1 bg-gold-500/35 rounded-full bottom-1/3 left-1/2"
             />

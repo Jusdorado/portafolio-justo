@@ -1,7 +1,9 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, Calendar, Users, Award, ChevronRight, X } from 'lucide-react';
+import {
+  ExternalLink, Github, Calendar, Users, Award, ChevronRight, X,
+} from 'lucide-react';
 import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { useState } from 'react';
 import { trackEvent, trackProjectView, trackExternalLink } from '@/lib/analytics';
@@ -13,10 +15,10 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [filter, setFilter] = useState('all');
 
-  const categories = ['all', ...Array.from(new Set(projects.map(p => p.category)))];
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(p => p.category === filter);
+  const categories = ['all', ...Array.from(new Set(projects.map((p) => p.category)))];
+  const filteredProjects = filter === 'all'
+    ? projects
+    : projects.filter((p) => p.category === filter);
 
   const handleProjectClick = (project: any) => {
     setSelectedProject(project);
@@ -84,7 +86,7 @@ const Projects = () => {
                       {project.title.charAt(0)}
                     </div>
                   </div>
-                  
+
                   {/* Featured Badge */}
                   {project.featured && (
                     <div className="absolute top-4 left-4 px-3 py-1 bg-gold-400 text-moka-900 text-xs font-bold rounded-full">
@@ -98,9 +100,10 @@ const Projects = () => {
                       project.status === 'Completado'
                         ? 'bg-green-100 text-green-700'
                         : project.status === 'En desarrollo'
-                        ? 'bg-blue-100 text-blue-700'
-                        : 'bg-yellow-100 text-yellow-700'
-                    }`}>
+                          ? 'bg-blue-100 text-blue-700'
+                          : 'bg-yellow-100 text-yellow-700'
+                    }`}
+                    >
                       {project.status}
                     </span>
                   </div>
@@ -126,7 +129,7 @@ const Projects = () => {
                   <h3 className="heading-4 mb-2 group-hover:text-gold-600 transition-colors duration-300">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-sm text-moka-600 mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
@@ -143,7 +146,8 @@ const Projects = () => {
                     ))}
                     {project.technologies.length > 3 && (
                       <span className="px-2 py-1 bg-moka-100 text-moka-600 text-xs rounded-md">
-                        +{project.technologies.length - 3}
+                        +
+                        {project.technologies.length - 3}
                       </span>
                     )}
                   </div>
@@ -162,7 +166,7 @@ const Projects = () => {
                 </div>
 
                 {/* Hover Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300" />
               </div>
             </motion.div>
           ))}
@@ -183,195 +187,194 @@ const Projects = () => {
   );
 };
 
-const ProjectModal = ({ 
-  project, 
-  onClose, 
-  onExternalLink 
-}: { 
-  project: any; 
-  onClose: () => void; 
-  onExternalLink: (url: string, text: string, projectId: string) => void; 
-}) => {
-  return (
+const ProjectModal = ({
+  project,
+  onClose,
+  onExternalLink,
+}: {
+  project: any;
+  onClose: () => void;
+  onExternalLink: (url: string, text: string, projectId: string) => void;
+}) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-moka-900/80 backdrop-blur-sm"
+    onClick={onClose}
+  >
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-moka-900/80 backdrop-blur-sm"
-      onClick={onClose}
+      initial={{ opacity: 0, scale: 0.9, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.9, y: 20 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+      onClick={(e) => e.stopPropagation()}
     >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.9, y: 20 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="sticky top-0 bg-white border-b border-moka-100 p-6 rounded-t-2xl">
-          <div className="flex items-start justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <span className="px-3 py-1 bg-gold-100 text-gold-700 text-sm font-medium rounded-md">
-                  {project.category}
-                </span>
-                <span className={`px-3 py-1 text-sm font-medium rounded-md ${
-                  project.status === 'Completado'
-                    ? 'bg-green-100 text-green-700'
-                    : project.status === 'En desarrollo'
+      {/* Header */}
+      <div className="sticky top-0 bg-white border-b border-moka-100 p-6 rounded-t-2xl">
+        <div className="flex items-start justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="px-3 py-1 bg-gold-100 text-gold-700 text-sm font-medium rounded-md">
+                {project.category}
+              </span>
+              <span className={`px-3 py-1 text-sm font-medium rounded-md ${
+                project.status === 'Completado'
+                  ? 'bg-green-100 text-green-700'
+                  : project.status === 'En desarrollo'
                     ? 'bg-blue-100 text-blue-700'
                     : 'bg-yellow-100 text-yellow-700'
-                }`}>
-                  {project.status}
-                </span>
-              </div>
-              <h2 className="heading-3 text-moka-700 mb-2">{project.title}</h2>
-              <p className="text-moka-600">{project.subtitle}</p>
+              }`}
+              >
+                {project.status}
+              </span>
             </div>
-            <button
-              onClick={onClose}
-              className="p-2 hover:bg-moka-100 rounded-lg transition-colors duration-200"
-            >
-              <X className="w-6 h-6 text-moka-500" />
-            </button>
+            <h2 className="heading-3 text-moka-700 mb-2">{project.title}</h2>
+            <p className="text-moka-600">{project.subtitle}</p>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-moka-100 rounded-lg transition-colors duration-200"
+          >
+            <X className="w-6 h-6 text-moka-500" />
+          </button>
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        {/* Project Image */}
+        <div className="h-64 bg-gradient-moka rounded-xl mb-6 flex items-center justify-center">
+          <div className="text-6xl font-serif font-bold text-gold-400">
+            {project.title.charAt(0)}
           </div>
         </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {/* Project Image */}
-          <div className="h-64 bg-gradient-moka rounded-xl mb-6 flex items-center justify-center">
-            <div className="text-6xl font-serif font-bold text-gold-400">
-              {project.title.charAt(0)}
-            </div>
-          </div>
+        {/* Description */}
+        <div className="mb-6">
+          <h3 className="font-bold text-moka-700 mb-3">Descripción del proyecto</h3>
+          <p className="text-moka-600 leading-relaxed mb-4">
+            {project.longDescription || project.description}
+          </p>
+        </div>
 
-          {/* Description */}
-          <div className="mb-6">
-            <h3 className="font-bold text-moka-700 mb-3">Descripción del proyecto</h3>
-            <p className="text-moka-600 leading-relaxed mb-4">
-              {project.longDescription || project.description}
-            </p>
-          </div>
-
-          {/* Project Details Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-6">
-            {/* Meta Information */}
-            <div>
-              <h4 className="font-semibold text-moka-700 mb-3">Información del proyecto</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-moka-500">Año:</span>
-                  <span className="text-moka-700">{project.year}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-moka-500">Duración:</span>
-                  <span className="text-moka-700">{project.duration}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-moka-500">Equipo:</span>
-                  <span className="text-moka-700">{project.team}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-moka-500">Mi rol:</span>
-                  <span className="text-moka-700">{project.role}</span>
-                </div>
+        {/* Project Details Grid */}
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          {/* Meta Information */}
+          <div>
+            <h4 className="font-semibold text-moka-700 mb-3">Información del proyecto</h4>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-moka-500">Año:</span>
+                <span className="text-moka-700">{project.year}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-moka-500">Duración:</span>
+                <span className="text-moka-700">{project.duration}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-moka-500">Equipo:</span>
+                <span className="text-moka-700">{project.team}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-moka-500">Mi rol:</span>
+                <span className="text-moka-700">{project.role}</span>
               </div>
             </div>
+          </div>
 
-            {/* Technologies */}
-            <div>
-              <h4 className="font-semibold text-moka-700 mb-3">Tecnologías utilizadas</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech: string, idx: number) => (
-                  <span
+          {/* Technologies */}
+          <div>
+            <h4 className="font-semibold text-moka-700 mb-3">Tecnologías utilizadas</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech: string, idx: number) => (
+                <span
                     key={idx}
                     className="px-3 py-1 bg-moka-100 text-moka-600 text-sm rounded-md"
                   >
                     {tech}
                   </span>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Challenges & Solutions */}
-          {project.challenges && project.solutions && (
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <h4 className="font-semibold text-moka-700 mb-3">Desafíos</h4>
-                <ul className="space-y-2">
-                  {project.challenges.map((challenge: string, idx: number) => (
+        {/* Challenges & Solutions */}
+        {project.challenges && project.solutions && (
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h4 className="font-semibold text-moka-700 mb-3">Desafíos</h4>
+            <ul className="space-y-2">
+              {project.challenges.map((challenge: string, idx: number) => (
                     <li key={idx} className="text-sm text-moka-600 flex items-start">
-                      <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-2 flex-shrink-0" />
                       {challenge}
                     </li>
                   ))}
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold text-moka-700 mb-3">Soluciones</h4>
-                <ul className="space-y-2">
-                  {project.solutions.map((solution: string, idx: number) => (
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-moka-700 mb-3">Soluciones</h4>
+            <ul className="space-y-2">
+              {project.solutions.map((solution: string, idx: number) => (
                     <li key={idx} className="text-sm text-moka-600 flex items-start">
-                      <span className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 mr-2 flex-shrink-0"></span>
+                      <span className="w-1.5 h-1.5 bg-green-400 rounded-full mt-2 mr-2 flex-shrink-0" />
                       {solution}
                     </li>
                   ))}
-                </ul>
-              </div>
-            </div>
-          )}
+            </ul>
+          </div>
+        </div>
+        )}
 
-          {/* Results */}
-          {project.results && (
-            <div className="mb-6">
-              <h4 className="font-semibold text-moka-700 mb-3">Resultados obtenidos</h4>
-              <ul className="space-y-2">
-                {project.results.map((result: string, idx: number) => (
-                  <li key={idx} className="text-sm text-gold-600 flex items-start">
+        {/* Results */}
+        {project.results && (
+        <div className="mb-6">
+          <h4 className="font-semibold text-moka-700 mb-3">Resultados obtenidos</h4>
+          <ul className="space-y-2">
+            {project.results.map((result: string, idx: number) => (
+              <li key={idx} className="text-sm text-gold-600 flex items-start">
                     <Award className="w-4 h-4 mt-0.5 mr-2 flex-shrink-0" />
                     {result}
                   </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 pt-6 border-t border-moka-100">
-            {project.links?.live && (
-              <button
-                onClick={() => onExternalLink(project.links.live, 'Visitar Web', project.id)}
-                className="btn btn-primary"
-              >
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Visitar Web
-              </button>
-            )}
-            {project.links?.github && (
-              <button
-                onClick={() => onExternalLink(project.links.github, 'Ver GitHub', project.id)}
-                className="btn btn-secondary"
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Ver GitHub
-              </button>
-            )}
-            {project.links?.case_study && project.links.case_study !== '#' && (
-              <button
-                onClick={() => onExternalLink(project.links.case_study, 'Caso de Estudio', project.id)}
-                className="btn btn-outline"
-              >
-                Ver Caso de Estudio
-              </button>
-            )}
-          </div>
+            ))}
+          </ul>
         </div>
-      </motion.div>
+        )}
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap gap-4 pt-6 border-t border-moka-100">
+          {project.links?.live && (
+          <button
+            onClick={() => onExternalLink(project.links.live, 'Visitar Web', project.id)}
+            className="btn btn-primary"
+          >
+            <ExternalLink className="w-4 h-4 mr-2" />
+            Visitar Web
+          </button>
+          )}
+          {project.links?.github && (
+          <button
+            onClick={() => onExternalLink(project.links.github, 'Ver GitHub', project.id)}
+            className="btn btn-secondary"
+          >
+            <Github className="w-4 h-4 mr-2" />
+            Ver GitHub
+          </button>
+          )}
+          {project.links?.case_study && project.links.case_study !== '#' && (
+          <button
+            onClick={() => onExternalLink(project.links.case_study, 'Caso de Estudio', project.id)}
+            className="btn btn-outline"
+          >
+            Ver Caso de Estudio
+          </button>
+          )}
+        </div>
+      </div>
     </motion.div>
-  );
-};
+  </motion.div>
+);
 
 export default Projects;

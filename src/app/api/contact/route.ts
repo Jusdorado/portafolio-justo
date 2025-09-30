@@ -29,7 +29,7 @@ const createTransporter = () => {
         pass: process.env.SENDGRID_API_KEY,
       },
     });
-  } else if (process.env.MAILGUN_API_KEY) {
+  } if (process.env.MAILGUN_API_KEY) {
     // Mailgun configuration
     return nodemailer.createTransport({
       host: 'smtp.mailgun.org',
@@ -40,18 +40,17 @@ const createTransporter = () => {
         pass: process.env.MAILGUN_API_KEY,
       },
     });
-  } else {
-    // SMTP configuration (Gmail, etc.)
-    return nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
   }
+  // SMTP configuration (Gmail, etc.)
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
 };
 
 export async function POST(request: NextRequest) {
@@ -62,7 +61,7 @@ export async function POST(request: NextRequest) {
     } catch {
       return NextResponse.json(
         { message: 'Demasiadas solicitudes. Inténtalo más tarde.' },
-        { status: 429 }
+        { status: 429 },
       );
     }
 
@@ -74,7 +73,7 @@ export async function POST(request: NextRequest) {
     if (validatedData.honeypot) {
       return NextResponse.json(
         { message: 'Solicitud no válida' },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -137,22 +136,21 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { message: 'Mensaje enviado correctamente' },
-      { status: 200 }
+      { status: 200 },
     );
-
   } catch (error) {
     console.error('Contact form error:', error);
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { message: 'Datos del formulario no válidos', errors: error.errors },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     return NextResponse.json(
       { message: 'Error interno del servidor' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -165,7 +163,7 @@ async function saveToAirtable(data: any) {
     const response = await fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE_ID}/Contacts`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.AIRTABLE_API_KEY}`,
+        Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
@@ -194,7 +192,7 @@ async function saveToNotion(data: any) {
     const response = await fetch('https://api.notion.com/v1/pages', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.NOTION_API_KEY}`,
+        Authorization: `Bearer ${process.env.NOTION_API_KEY}`,
         'Content-Type': 'application/json',
         'Notion-Version': '2022-06-28',
       },

@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
+import {
+  Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, Loader,
+} from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -38,7 +40,7 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setSubmitStatus('loading');
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -102,7 +104,7 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <h3 className="heading-3 mb-8">Información de contacto</h3>
-          
+
           <div className="space-y-6">
             {/* Email */}
             <motion.div
@@ -204,7 +206,7 @@ const Contact = () => {
         >
           <div className="card p-8">
             <h3 className="heading-3 mb-6">Envíame un mensaje</h3>
-            
+
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Honeypot field (hidden) */}
               <input

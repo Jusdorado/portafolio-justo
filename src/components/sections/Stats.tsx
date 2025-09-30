@@ -20,18 +20,18 @@ const Stats = () => {
               ? { opacity: 1, y: 0, scale: 1 }
               : { opacity: 0, y: 30, scale: 0.9 }
           }
-          transition={{ 
-            duration: 0.6, 
+          transition={{
+            duration: 0.6,
             type: 'spring',
             stiffness: 100,
-            damping: 15
+            damping: 15,
           }}
           className="text-center group"
         >
           <div className="card card-hover p-6 relative overflow-hidden">
             {/* Background Decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
             <div className="relative z-10">
               <AnimatedNumber
                 value={stat.number}
@@ -49,7 +49,7 @@ const Stats = () => {
             </div>
 
             {/* Hover Effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
           </div>
         </motion.div>
       ))}
@@ -58,14 +58,14 @@ const Stats = () => {
 };
 
 // Animated Number Component
-const AnimatedNumber = ({ 
-  value, 
-  isVisible, 
-  className 
-}: { 
-  value: string; 
-  isVisible: boolean; 
-  className: string; 
+const AnimatedNumber = ({
+  value,
+  isVisible,
+  className,
+}: {
+  value: string;
+  isVisible: boolean;
+  className: string;
 }) => {
   const [displayValue, setDisplayValue] = useState('0');
 
@@ -75,7 +75,7 @@ const AnimatedNumber = ({
     // Extract number and suffix
     const numMatch = value.match(/(\d+)/);
     const suffix = value.replace(/\d+/, '');
-    
+
     if (!numMatch) {
       setDisplayValue(value);
       return;

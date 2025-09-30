@@ -22,10 +22,10 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
+
       // Update active section based on scroll position
-      const sections = navigation.map(item => item.href.substring(1));
-      const currentSection = sections.find(section => {
+      const sections = navigation.map((item) => item.href.substring(1));
+      const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -33,7 +33,7 @@ const Header = () => {
         }
         return false;
       });
-      
+
       if (currentSection) {
         setActiveSection(currentSection);
       }
@@ -46,16 +46,16 @@ const Header = () => {
   const handleNavClick = (href: string, name: string) => {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
-    
+
     if (element) {
       // Cerrar menú móvil primero
       setIsMobileMenuOpen(false);
-      
+
       // Pequeño delay para que la animación del menú termine
       setTimeout(() => {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'start',
         });
       }, 300);
     } else {
@@ -70,12 +70,12 @@ const Header = () => {
     if (element) {
       // Cerrar menú móvil primero
       setIsMobileMenuOpen(false);
-      
+
       // Pequeño delay para que la animación del menú termine
       setTimeout(() => {
-        element.scrollIntoView({ 
+        element.scrollIntoView({
           behavior: 'smooth',
-          block: 'start'
+          block: 'start',
         });
       }, 300);
     } else {
@@ -105,9 +105,9 @@ const Header = () => {
               onClick={() => handleNavClick('#inicio', 'Logo')}
               className="flex items-center space-x-1.5 sm:space-x-2 group"
             >
-              <CoffeeLogo 
-                size="small" 
-                className="group-hover:scale-110 transition-all duration-500 group-hover:rotate-3 flex-shrink-0" 
+              <CoffeeLogo
+                size="small"
+                className="group-hover:scale-110 transition-all duration-500 group-hover:rotate-3 flex-shrink-0"
               />
               <span className="font-serif font-bold text-xs sm:text-sm md:text-base text-white group-hover:text-gold-400 transition-colors duration-300 truncate">
                 Justo García
@@ -202,7 +202,7 @@ const Header = () => {
                     {item.name}
                   </motion.button>
                 ))}
-                
+
                 <motion.button
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

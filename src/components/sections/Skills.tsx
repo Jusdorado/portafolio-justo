@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Palette, Zap, Database, Settings, Server } from 'lucide-react';
+import {
+  Code, Palette, Zap, Database, Settings, Server,
+} from 'lucide-react';
 import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { useEffect, useState } from 'react';
 import content from '@/data/content.json';
@@ -15,32 +17,32 @@ const Skills = () => {
       title: 'Lenguajes de Programación',
       icon: Code,
       skills: skills.languages,
-      color: 'from-blue-500 to-purple-600'
+      color: 'from-blue-500 to-purple-600',
     },
     {
       title: 'Frontend & Frameworks',
       icon: Palette,
       skills: skills.frontend,
-      color: 'from-pink-500 to-rose-600'
+      color: 'from-pink-500 to-rose-600',
     },
     {
       title: 'Backend & Bases de Datos',
       icon: Database,
       skills: skills.backend,
-      color: 'from-green-500 to-emerald-600'
+      color: 'from-green-500 to-emerald-600',
     },
     {
       title: 'IA & Automatización',
       icon: Zap,
       skills: skills.automation,
-      color: 'from-yellow-500 to-orange-600'
+      color: 'from-yellow-500 to-orange-600',
     },
     {
       title: 'Herramientas & DevOps',
       icon: Settings,
       skills: skills.tools,
-      color: 'from-indigo-500 to-blue-600'
-    }
+      color: 'from-indigo-500 to-blue-600',
+    },
   ];
 
   return (
@@ -70,14 +72,14 @@ const Skills = () => {
   );
 };
 
-const SkillCategory = ({ 
-  category, 
-  isVisible, 
-  delay 
-}: { 
-  category: any; 
-  isVisible: boolean; 
-  delay: number; 
+const SkillCategory = ({
+  category,
+  isVisible,
+  delay,
+}: {
+  category: any;
+  isVisible: boolean;
+  delay: number;
 }) => {
   const Icon = category.icon;
 
@@ -85,12 +87,14 @@ const SkillCategory = ({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={isVisible ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay, type: 'spring', stiffness: 100 }}
+      transition={{
+        duration: 0.6, delay, type: 'spring', stiffness: 100,
+      }}
       className="card card-hover p-6 group relative overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      
+      <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
       <div className="relative z-10">
         {/* Header */}
         <div className="flex items-center mb-6">
@@ -116,19 +120,19 @@ const SkillCategory = ({
       </div>
 
       {/* Hover Border Effect */}
-      <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300"></div>
+      <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300" />
     </motion.div>
   );
 };
 
-const SkillBar = ({ 
-  skill, 
-  isVisible, 
-  delay 
-}: { 
-  skill: any; 
-  isVisible: boolean; 
-  delay: number; 
+const SkillBar = ({
+  skill,
+  isVisible,
+  delay,
+}: {
+  skill: any;
+  isVisible: boolean;
+  delay: number;
 }) => {
   const [animatedLevel, setAnimatedLevel] = useState(0);
 
@@ -154,24 +158,25 @@ const SkillBar = ({
           {skill.name}
         </span>
         <span className="text-xs text-moka-500 font-medium">
-          {skill.level}%
+          {skill.level}
+          %
         </span>
       </div>
-      
+
       <div className="progress-bar">
         <motion.div
           className="progress-fill"
           initial={{ width: 0 }}
           animate={{ width: isVisible ? `${animatedLevel}%` : 0 }}
-          transition={{ 
-            duration: 1.5, 
-            delay: delay,
+          transition={{
+            duration: 1.5,
+            delay,
             type: 'spring',
-            stiffness: 50
+            stiffness: 50,
           }}
         />
       </div>
-      
+
       <div className="text-xs text-moka-400 mt-1">
         {skill.category}
       </div>

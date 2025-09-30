@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, ExternalLink, Award, Briefcase, Code, Users, TrendingUp } from 'lucide-react';
+import {
+  Calendar, MapPin, ExternalLink, Award, Briefcase, Code, Users, TrendingUp,
+} from 'lucide-react';
 import content from '@/data/content.json';
 
 const Experience = () => {
@@ -67,7 +69,7 @@ const Experience = () => {
               {/* Content */}
               <div className="p-4 md:p-6">
                 <p className="text-moka-600 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">{exp.description}</p>
-                
+
                 {/* Responsibilities */}
                 <div className="mb-4 md:mb-6">
                   <h4 className="font-semibold text-moka-700 mb-2 md:mb-3 flex items-center text-sm md:text-base">
@@ -77,7 +79,7 @@ const Experience = () => {
                   <ul className="space-y-1 md:space-y-2">
                     {exp.responsibilities.map((resp: string, idx: number) => (
                       <li key={idx} className="flex items-start">
-                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-gold-400 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0"></div>
+                        <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-gold-400 rounded-full mt-2 mr-2 md:mr-3 flex-shrink-0" />
                         <span className="text-moka-600 text-sm md:text-base">{resp}</span>
                       </li>
                     ))}

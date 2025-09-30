@@ -66,7 +66,7 @@ export function truncateText(text: string, maxLength: number): string {
 // Debounce function
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  wait: number,
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
   
@@ -79,7 +79,7 @@ export function debounce<T extends (...args: any[]) => any>(
 // Throttle function
 export function throttle<T extends (...args: any[]) => any>(
   func: T,
-  limit: number
+  limit: number,
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean;
   

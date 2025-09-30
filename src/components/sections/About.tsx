@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Globe, Calendar, Award } from 'lucide-react';
+import {
+  MapPin, Globe, Calendar, Award,
+} from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import content from '@/data/content.json';
 
@@ -84,7 +86,11 @@ const About = () => {
                 className="flex items-center bg-moka-100/50 rounded-lg px-4 py-2"
               >
                 <span className="font-medium text-moka-700 mr-2">{language.name}</span>
-                <span className="text-sm text-moka-500">({language.level})</span>
+                <span className="text-sm text-moka-500">
+                  (
+                  {language.level}
+                  )
+                </span>
               </div>
             ))}
           </div>
@@ -105,12 +111,12 @@ const About = () => {
             <div className="absolute inset-4 bg-moka-500 rounded-xl flex items-center justify-center">
               <div className="text-6xl font-serif font-bold text-gold-400">JG</div>
             </div>
-            
+
             {/* Decorative Elements */}
             <div className="absolute top-4 right-4 w-12 h-12 bg-gold-400/20 rounded-lg flex items-center justify-center">
               <span className="text-xl">👨‍💻</span>
             </div>
-            
+
             <div className="absolute bottom-4 left-4 w-16 h-16 bg-moka-300/20 rounded-lg flex items-center justify-center">
               <span className="text-2xl">🎯</span>
             </div>
@@ -125,7 +131,7 @@ const About = () => {
           >
             <div className="flex items-center">
               <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full" />
               </div>
               <div>
                 <p className="text-xs font-medium text-moka-700">Disponible</p>
@@ -152,8 +158,8 @@ const About = () => {
           </motion.div>
 
           {/* Background Decorations */}
-          <div className="absolute -z-10 top-8 left-8 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl"></div>
-          <div className="absolute -z-10 bottom-8 right-8 w-24 h-24 bg-moka-300/10 rounded-full blur-xl"></div>
+          <div className="absolute -z-10 top-8 left-8 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl" />
+          <div className="absolute -z-10 bottom-8 right-8 w-24 h-24 bg-moka-300/10 rounded-full blur-xl" />
         </div>
       </motion.div>
     </div>

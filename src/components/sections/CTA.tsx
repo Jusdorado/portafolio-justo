@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageCircle, Calendar, Sparkles } from 'lucide-react';
+import {
+  ArrowRight, MessageCircle, Calendar, Sparkles,
+} from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { trackCTAClick } from '@/lib/analytics';
 import content from '@/data/content.json';
@@ -41,13 +43,13 @@ const CTA = () => {
           <div className="absolute inset-0">
             {/* Floating Elements */}
             <motion.div
-              animate={{ 
+              animate={{
                 rotate: 360,
-                scale: [1, 1.1, 1]
+                scale: [1, 1.1, 1],
               }}
-              transition={{ 
+              transition={{
                 rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
-                scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+                scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' },
               }}
               className="absolute top-8 right-8 w-16 h-16 bg-gold-400/10 rounded-full flex items-center justify-center"
             >
@@ -55,14 +57,14 @@ const CTA = () => {
             </motion.div>
 
             <motion.div
-              animate={{ 
+              animate={{
                 y: [-10, 10, -10],
-                rotate: [-5, 5, -5]
+                rotate: [-5, 5, -5],
               }}
-              transition={{ 
-                duration: 6, 
-                repeat: Infinity, 
-                ease: 'easeInOut' 
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: 'easeInOut',
               }}
               className="absolute bottom-8 left-8 w-12 h-12 bg-moka-300/20 rounded-lg flex items-center justify-center"
             >
@@ -70,8 +72,8 @@ const CTA = () => {
             </motion.div>
 
             {/* Gradient Orbs */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-moka-300/10 rounded-full blur-xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gold-400/5 rounded-full blur-2xl" />
+            <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-moka-300/10 rounded-full blur-xl" />
           </div>
 
           <div className="relative z-10">
@@ -79,7 +81,9 @@ const CTA = () => {
             <motion.div
               initial={{ scale: 0 }}
               animate={isVisible ? { scale: 1 } : { scale: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
+              transition={{
+                duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200,
+              }}
               className="w-20 h-20 bg-gold-400 rounded-2xl flex items-center justify-center mx-auto mb-8"
             >
               <MessageCircle className="w-10 h-10 text-moka-900" />
@@ -130,7 +134,7 @@ const CTA = () => {
                 {cta.primaryButton}
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
-              
+
               <button
                 onClick={handleSecondaryAction}
                 className="btn border-2 border-moka-300 text-moka-100 hover:bg-moka-300/20 hover:border-gold-400 hover:text-gold-400 hover:scale-105 focus:ring-moka-300 group"
@@ -143,7 +147,7 @@ const CTA = () => {
 
           {/* Animated Border */}
           <div className="absolute inset-0 rounded-xl">
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gold-400/20 via-transparent to-gold-400/20 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gold-400/20 via-transparent to-gold-400/20 animate-pulse" />
           </div>
         </div>
 

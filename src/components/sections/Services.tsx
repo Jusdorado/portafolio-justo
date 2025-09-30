@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Zap, Server, ArrowRight, CheckCircle } from 'lucide-react';
+import {
+  Code, Zap, Server, ArrowRight, CheckCircle,
+} from 'lucide-react';
 import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { trackEvent } from '@/lib/analytics';
 import content from '@/data/content.json';
@@ -16,7 +18,7 @@ const Services = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       trackEvent('service_inquiry', {
         service_name: serviceTitle,
-        location: 'services_section'
+        location: 'services_section',
       });
     }
   };
@@ -24,7 +26,7 @@ const Services = () => {
   const iconMap: { [key: string]: any } = {
     Code,
     Zap,
-    Server
+    Server,
   };
 
   return (
@@ -44,7 +46,7 @@ const Services = () => {
       <div ref={ref} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => {
           const Icon = iconMap[service.icon] || Code;
-          
+
           return (
             <motion.div
               key={service.id}
@@ -59,8 +61,8 @@ const Services = () => {
             >
               <div className="card card-hover p-8 h-full relative overflow-hidden">
                 {/* Background Decoration */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 <div className="relative z-10">
                   {/* Icon */}
                   <div className="w-16 h-16 bg-gradient-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -123,7 +125,7 @@ const Services = () => {
                 </div>
 
                 {/* Hover Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300" />
               </div>
             </motion.div>
           );

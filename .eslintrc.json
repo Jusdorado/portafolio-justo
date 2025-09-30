@@ -23,7 +23,21 @@
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
     "react/require-default-props": "off",
-    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/prop-types": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "no-trailing-spaces": "off",
+    "function-paren-newline": "off",
+    "prefer-template": "off",
+    "operator-linebreak": "off",
+    "max-len": "off",
+    "prefer-exponentiation-operator": "off",
+    "no-restricted-properties": "off",
+    "no-plusplus": "off",
+    "no-return-assign": "off",
+    "object-curly-newline": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "linebreak-style": "off"
   },
   "overrides": [
     {

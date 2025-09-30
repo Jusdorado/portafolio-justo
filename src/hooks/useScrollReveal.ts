@@ -32,9 +32,8 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
           setIsVisible(true);
         }, delay);
         return () => clearTimeout(timer);
-      } else {
-        setIsVisible(true);
       }
+      setIsVisible(true);
     } else if (!triggerOnce) {
       setIsVisible(false);
     }
@@ -55,21 +54,21 @@ export const useStaggeredReveal = (itemCount: number, staggerDelay: number = 100
   useEffect(() => {
     if (inView) {
       const timers: NodeJS.Timeout[] = [];
-      
+
       for (let i = 0; i < itemCount; i++) {
         const timer = setTimeout(() => {
-          setVisibleItems(prev => {
+          setVisibleItems((prev) => {
             const newState = [...prev];
             newState[i] = true;
             return newState;
           });
         }, i * staggerDelay);
-        
+
         timers.push(timer);
       }
 
       return () => {
-        timers.forEach(timer => clearTimeout(timer));
+        timers.forEach((timer) => clearTimeout(timer));
       };
     }
     // Siempre retornar una función de cleanup
@@ -89,7 +88,7 @@ export const useParallax = (speed: number = 0.5) => {
         const rect = elementRef.current.getBoundingClientRect();
         const scrolled = window.pageYOffset;
         const rate = scrolled * -speed;
-        
+
         if (rect.top <= window.innerHeight && rect.bottom >= 0) {
           setOffset(rate);
         }
@@ -116,7 +115,7 @@ export const useScrollProgress = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial calculation
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -134,7 +133,7 @@ export const useActiveSection = (sectionIds: string[]) => {
         const element = document.getElementById(sectionId);
         if (element) {
           const { offsetTop, offsetHeight } = element;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(sectionId);
             break;
@@ -145,7 +144,7 @@ export const useActiveSection = (sectionIds: string[]) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Initial check
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, [sectionIds]);
 

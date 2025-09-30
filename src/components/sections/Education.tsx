@@ -1,7 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GraduationCap, Calendar, MapPin, Award, ExternalLink, CheckCircle } from 'lucide-react';
+import {
+  GraduationCap, Calendar, MapPin, Award, ExternalLink, CheckCircle,
+} from 'lucide-react';
 import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { trackEvent } from '@/lib/analytics';
 import content from '@/data/content.json';
@@ -17,7 +19,7 @@ const Education = () => {
       trackEvent('external_link_click', {
         link_url: cert.credentialUrl,
         link_text: cert.name,
-        location: 'education_section'
+        location: 'education_section',
       });
     }
   };
@@ -42,7 +44,7 @@ const Education = () => {
             <GraduationCap className="w-8 h-8 mr-3 text-gold-600" />
             Formación Académica
           </h3>
-          
+
           <div ref={educationRef} className="space-y-6">
             {education.map((edu, index) => (
               <motion.div
@@ -57,8 +59,8 @@ const Education = () => {
                 className="card card-hover p-6 group relative overflow-hidden"
               >
                 {/* Background Decoration */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 <div className="relative z-10">
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
@@ -114,7 +116,7 @@ const Education = () => {
                 </div>
 
                 {/* Hover Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300" />
               </motion.div>
             ))}
           </div>
@@ -126,7 +128,7 @@ const Education = () => {
             <Award className="w-8 h-8 mr-3 text-gold-600" />
             Certificaciones
           </h3>
-          
+
           <div ref={certRef} className="space-y-4">
             {certifications.map((cert, index) => (
               <motion.div
@@ -139,15 +141,15 @@ const Education = () => {
                 }
                 transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
                 className={`card card-hover p-4 group relative overflow-hidden ${
-                  cert.credentialUrl && cert.credentialUrl !== '#' 
-                    ? 'cursor-pointer' 
+                  cert.credentialUrl && cert.credentialUrl !== '#'
+                    ? 'cursor-pointer'
                     : ''
                 }`}
                 onClick={() => handleCertificateClick(cert)}
               >
                 {/* Background Decoration */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
                 <div className="relative z-10">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center flex-1">
@@ -160,7 +162,7 @@ const Education = () => {
                         </h4>
                         <p className="text-sm text-gold-600 font-medium mb-1">{cert.issuer}</p>
                         <p className="text-xs text-moka-500 mb-2">{cert.date}</p>
-                        
+
                         {cert.duration && (
                           <span className="inline-block px-2 py-1 bg-moka-100 text-moka-600 text-xs rounded-md">
                             {cert.duration}
@@ -168,7 +170,7 @@ const Education = () => {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center ml-4">
                       <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
                       {cert.credentialUrl && cert.credentialUrl !== '#' && (
@@ -200,7 +202,7 @@ const Education = () => {
                 </div>
 
                 {/* Hover Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gold-400/20 rounded-xl transition-colors duration-300" />
               </motion.div>
             ))}
           </div>
