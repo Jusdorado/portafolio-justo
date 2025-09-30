@@ -81,7 +81,7 @@ const AnimatedNumber = ({
       return;
     }
 
-    const targetNum = parseInt(numMatch[1]);
+    const targetNum = parseInt(numMatch[1] || '0');
     const duration = 2000; // 2 seconds
     const steps = 60;
     const increment = targetNum / steps;
