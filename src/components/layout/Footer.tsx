@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowUp, Github, Mail, MapPin, Heart } from 'lucide-react';
 import { trackEvent, trackExternalLink } from '@/lib/analytics';
 import content from '@/data/content.json';
+import CoffeeLogo from '../ui/CoffeeLogo';
 
 const Footer = () => {
   const { personal } = content;
@@ -59,8 +60,11 @@ const Footer = () => {
                 viewport={{ once: true }}
               >
                 <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-gold rounded-lg flex items-center justify-center font-serif font-bold text-moka-900 mr-4">
-                    JG
+                  <div className="w-12 h-12 flex items-center justify-center mr-4">
+                    <CoffeeLogo 
+                      size="small" 
+                      className="scale-150 hover:scale-[1.7] transition-all duration-500 hover:rotate-3" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-serif font-bold text-moka-50">
