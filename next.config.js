@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Configuración mínima para GitHub Pages
+  // Configuración para GitHub Pages
   output: 'export',
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
+  basePath: '/portafolio-justo',
+  assetPrefix: '/portafolio-justo',
   eslint: {
     ignoreDuringBuilds: true, // Desactivar ESLint durante build para GitHub Pages
   },
