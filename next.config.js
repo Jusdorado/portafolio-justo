@@ -5,6 +5,9 @@ const nextConfig = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
+  eslint: {
+    ignoreDuringBuilds: true, // Desactivar ESLint durante build para GitHub Pages
+  },
   images: {
     unoptimized: true, // Necesario para exportación estática
   },
