@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import {
   MapPin, Globe, Calendar, Award,
 } from 'lucide-react';
@@ -107,9 +108,16 @@ const About = () => {
         <div className="relative">
           {/* Main Image Container */}
           <div className="relative w-80 h-96 mx-auto bg-gradient-warm rounded-2xl overflow-hidden shadow-moka-lg">
-            {/* Profile Image Placeholder */}
-            <div className="absolute inset-4 bg-moka-500 rounded-xl flex items-center justify-center">
-              <div className="text-6xl font-serif font-bold text-gold-400">JG</div>
+            {/* Profile Logo */}
+            <div className="absolute inset-4 bg-white rounded-xl overflow-hidden">
+              <Image
+                src="/images/logo.png"
+                alt="Justo García Logo"
+                width={200}
+                height={200}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
 
             {/* Decorative Elements */}

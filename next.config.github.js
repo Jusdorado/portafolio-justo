@@ -1,19 +1,17 @@
 /** @type {import('next').NextConfig} */
-// CONFIGURACIÓN PARA DESARROLLO LOCAL (RAMA PRUEBAS)
-// Para GitHub Pages usar: next.config.github.js
 const nextConfig = {
-  // Configuración optimizada para desarrollo local
-  // output: 'export',
-  // trailingSlash: true,
-  // skipTrailingSlashRedirect: true,
-  // distDir: 'out',
-  // basePath: '/portafolio-justo',
-  // assetPrefix: '/portafolio-justo',
+  // Configuración para GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
+  basePath: '/portafolio-justo',
+  assetPrefix: '/portafolio-justo',
   eslint: {
-    ignoreDuringBuilds: false, // Activar ESLint para desarrollo
+    ignoreDuringBuilds: true, // Desactivar ESLint durante build para GitHub Pages
   },
   images: {
-    unoptimized: false, // Optimización de imágenes habilitada para desarrollo
+    unoptimized: true, // Necesario para exportación estática
   },
   // Headers comentados para GitHub Pages (exportación estática)
   // async headers() {
