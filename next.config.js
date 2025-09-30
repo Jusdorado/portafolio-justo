@@ -9,7 +9,13 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  // Configuración para GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
   images: {
+    unoptimized: true, // Necesario para exportación estática
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -57,18 +63,19 @@ const nextConfig = {
       },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap',
-      },
-      {
-        source: '/robots.txt',
-        destination: '/api/robots',
-      },
-    ];
-  },
+  // Comentado para GitHub Pages (no soporta API routes)
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/sitemap.xml',
+  //       destination: '/api/sitemap',
+  //     },
+  //     {
+  //       source: '/robots.txt',
+  //       destination: '/api/robots',
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = withBundleAnalyzer(nextConfig);

@@ -17,6 +17,7 @@
     "e2e:ui": "playwright test --ui",
     "lighthouse": "lhci autorun",
     "export": "next build && next export",
+    "build:github-pages": "next build",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
