@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:local": "cross-env DEPLOY_TARGET=local next build",
+    "build:github": "cross-env DEPLOY_TARGET=github next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
@@ -17,7 +19,6 @@
     "e2e:ui": "playwright test --ui",
     "lighthouse": "lhci autorun",
     "export": "next build && next export",
-    "build:github-pages": "next build",
     "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
