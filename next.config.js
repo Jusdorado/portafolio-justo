@@ -1,33 +1,12 @@
 /** @type {import('next').NextConfig} */
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-});
-
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-  experimental: {
-    optimizeCss: true,
-  },
-  // Configuración para GitHub Pages
+  // Configuración mínima para GitHub Pages
   output: 'export',
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
   images: {
     unoptimized: true, // Necesario para exportación estática
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    domains: ['localhost'],
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
-  compress: true,
-  poweredByHeader: false,
-  generateEtags: false,
-  env: {
-    CUSTOM_KEY: 'my-value',
   },
   // Headers comentados para GitHub Pages (exportación estática)
   // async headers() {
@@ -70,4 +49,4 @@ const nextConfig = {
   // },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = nextConfig;
