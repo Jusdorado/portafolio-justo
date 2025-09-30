@@ -111,7 +111,7 @@ const About = () => {
             {/* Profile Logo */}
             <div className="absolute inset-4 bg-white rounded-xl overflow-hidden">
               <Image
-                src="../public/images/logo.png"
+                src="/images/logo.png"
                 alt="Justo García Logo"
                 width={200}
                 height={200}
