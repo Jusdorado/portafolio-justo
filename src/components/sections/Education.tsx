@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import {
   GraduationCap, Calendar, MapPin, Award, ExternalLink, CheckCircle,
 } from 'lucide-react';
-import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
+import { useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { trackEvent } from '@/lib/analytics';
 import content from '@/data/content.json';
 

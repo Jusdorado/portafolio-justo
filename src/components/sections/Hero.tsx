@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import {
-  ArrowDown, Download, ExternalLink, Github,
+  ArrowDown, ExternalLink, Github,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { trackEvent, trackCTAClick } from '@/lib/analytics';

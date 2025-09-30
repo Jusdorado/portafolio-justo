@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
+import { useStaggeredReveal } from '@/hooks/useScrollReveal';
 import { useEffect, useState } from 'react';
 import content from '@/data/content.json';
 

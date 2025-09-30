@@ -43,7 +43,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string, name: string) => {
+  const handleNavClick = (href: string, _name: string) => {
     const targetId = href.substring(1);
     const element = document.getElementById(targetId);
 

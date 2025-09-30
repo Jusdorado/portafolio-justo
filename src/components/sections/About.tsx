@@ -80,7 +80,7 @@ const About = () => {
             Idiomas
           </h4>
           <div className="flex flex-wrap gap-3">
-            {personal.languages.map((language, index) => (
+            {personal.languages.map((language, _index) => (
               <div
                 key={language.name}
                 className="flex items-center bg-moka-100/50 rounded-lg px-4 py-2"

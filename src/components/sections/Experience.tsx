@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import {
-  Calendar, MapPin, ExternalLink, Award, Briefcase, Code, Users, TrendingUp,
+  Calendar, MapPin, Award, Briefcase, Code, Users, TrendingUp,
 } from 'lucide-react';
 import content from '@/data/content.json';
 

@@ -43,7 +43,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNavClick = (href: string, name: string) => {
+  const handleNavClick = (href: string, _name: string) => {
     const element = document.getElementById(href.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import {
-  Code, Palette, Zap, Database, Settings, Server,
+  Code, Palette, Zap, Database, Settings,
 } from 'lucide-react';
-import { useScrollReveal, useStaggeredReveal } from '@/hooks/useScrollReveal';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useEffect, useState } from 'react';
 import content from '@/data/content.json';
 
