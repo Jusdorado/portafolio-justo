@@ -1,0 +1,325 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables */
+:root {
+  --font-outfit: 'Outfit', system-ui, sans-serif;
+  --font-crimson: 'Crimson Text', Georgia, serif;
+  
+  /* Moka Color Palette */
+  --moka-50: #F8F4EF;
+  --moka-100: #E6D5C3;
+  --moka-200: #D4C4A8;
+  --moka-300: #C9A66B;
+  --moka-400: #B87333;
+  --moka-500: #4B3621;
+  --moka-600: #3C2F2F;
+  --moka-700: #2B2B2B;
+  --moka-800: #1F1F1F;
+  --moka-900: #0F0F0F;
+  
+  /* Gold Accents */
+  --gold-400: #D4AF37;
+  --gold-500: #C9A66B;
+  --gold-600: #B87333;
+  
+  /* Accent Colors */
+  --accent-olive: #708D81;
+  --accent-sand: #B0A999;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-feature-settings: 'rlig' 1, 'calt' 1, 'kern' 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-variant-ligatures: common-ligatures;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus {
+    outline: 2px solid var(--gold-400);
+    outline-offset: 2px;
+  }
+  
+  /* Selection styles */
+  ::selection {
+    background-color: var(--gold-400);
+    color: var(--moka-900);
+  }
+  
+  ::-moz-selection {
+    background-color: var(--gold-400);
+    color: var(--moka-900);
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Base */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-gold text-moka-900 hover:shadow-gold-lg hover:scale-105 focus:ring-gold-400;
+  }
+  
+  .btn-secondary {
+    @apply bg-moka-500 text-moka-50 hover:bg-moka-600 hover:shadow-moka-lg hover:scale-105 focus:ring-moka-400;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-gold-400 text-gold-400 hover:bg-gold-400 hover:text-moka-900 hover:shadow-gold focus:ring-gold-400;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-xl shadow-moka border border-moka-100/50 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-moka-lg hover:-translate-y-1 hover:bg-white/90;
+  }
+  
+  /* Section Styles */
+  .section {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+  
+  .section-alt {
+    @apply bg-moka-100/30;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Typography */
+  .heading-1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-moka-700 leading-tight tracking-tight;
+  }
+  
+  .heading-2 {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-moka-700 leading-tight tracking-tight;
+  }
+  
+  .heading-3 {
+    @apply text-2xl md:text-3xl font-serif font-bold text-moka-700 leading-tight tracking-tight;
+  }
+  
+  .heading-4 {
+    @apply text-xl md:text-2xl font-serif font-semibold text-moka-700 leading-tight tracking-tight;
+  }
+  
+  /* Enhanced text styles */
+  .text-display {
+    @apply font-serif font-bold tracking-tight;
+  }
+  
+  .text-body {
+    @apply font-sans leading-relaxed;
+  }
+  
+  .text-gradient-gold {
+    @apply bg-gradient-gold bg-clip-text text-transparent;
+  }
+  
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-moka-200 rounded-lg focus:ring-2 focus:ring-gold-400 focus:border-transparent transition-all duration-300 placeholder-moka-400;
+  }
+  
+  .form-textarea {
+    @apply form-input resize-none;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-moka-700 mb-2;
+  }
+  
+  .form-error {
+    @apply text-red-600 text-sm mt-1;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply text-moka-600 hover:text-gold-400 transition-colors duration-300 font-medium;
+  }
+  
+  .nav-link-active {
+    @apply text-gold-400;
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-bounce-soft {
+    animation: bounceSoft 2s infinite;
+  }
+  
+  /* Scroll Animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Stagger Animation */
+  .stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-out;
+  }
+  
+  .stagger-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Timeline */
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-moka-200;
+  }
+  
+  .timeline-item::before {
+    @apply absolute -left-2 top-0 w-4 h-4 bg-gold-400 rounded-full border-4 border-white shadow-md;
+    content: '';
+  }
+  
+  .timeline-item:last-child {
+    @apply border-l-transparent;
+  }
+  
+  /* Progress Bar */
+  .progress-bar {
+    @apply w-full bg-moka-200 rounded-full h-2 overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-gold rounded-full transition-all duration-1000 ease-out;
+  }
+  
+  /* Backdrop Effects */
+  .backdrop-moka {
+    @apply backdrop-blur-md bg-moka-500/80;
+  }
+  
+  .backdrop-light {
+    @apply backdrop-blur-md bg-white/80;
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-gold-lg;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    @apply fixed inset-0 z-50 bg-moka-500/95 backdrop-blur-lg;
+  }
+  
+  .mobile-menu-enter {
+    @apply opacity-0 scale-95;
+  }
+  
+  .mobile-menu-enter-active {
+    @apply opacity-100 scale-100 transition-all duration-300 ease-out;
+  }
+  
+  .mobile-menu-exit {
+    @apply opacity-100 scale-100;
+  }
+  
+  .mobile-menu-exit-active {
+    @apply opacity-0 scale-95 transition-all duration-200 ease-in;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Print Styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+  
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .card {
+      @apply border-2 border-moka-700;
+    }
+    
+    .btn-primary {
+      @apply border-2 border-moka-900;
+    }
+  }
+  
+  /* Dark Mode Support (Future Enhancement) */
+  @media (prefers-color-scheme: dark) {
+    /* Dark mode styles can be added here if needed */
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--moka-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--moka-500);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--moka-600);
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--moka-500) var(--moka-100);
+}

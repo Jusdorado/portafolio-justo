@@ -1,0 +1,371 @@
+{
+  "personal": {
+    "name": "Justo García Ferrández",
+    "title": "Programador Junior en IA, Automatización y Redes",
+    "subtitle": "Especializado en inteligencia artificial, automatización de procesos y administración de redes. Desarrollo soluciones eficientes usando Make, n8n y stacks modernos.",
+    "bio": "¡Hola! 👋 Soy Justo García Ferrández, programador junior con base en Orihuela (Alicante). Me especializo en inteligencia artificial, automatización y redes. Actualmente me estoy formando en programación web, tanto frontend como backend, y tengo experiencia práctica con automatizaciones usando herramientas como Make y n8n. Mi objetivo es seguir creciendo profesionalmente y aportar soluciones eficientes que optimicen procesos y generen valor real.",
+    "location": "Orihuela, Alicante, España",
+    "email": "justo.garcia.2004@gmail.com",
+    "phone": "(+34) 644 61 91 18",
+    "languages": [
+      { "name": "Español", "level": "Nativo" },
+      { "name": "Inglés", "level": "B1" },
+      { "name": "Valenciano", "level": "B1" }
+    ],
+    "availability": "Disponible para proyectos freelance y oportunidades laborales",
+    "social": {
+      "github": "https://github.com/Jusdorado",
+      "linkedin": "https://linkedin.com/in/justo-garcia-ferrandez",
+      "email": "mailto:justo.garcia.2004@gmail.com"
+    }
+  },
+  "stats": [
+    { "number": "1+", "label": "Años de Experiencia", "description": "Desarrollando soluciones tecnológicas" },
+    { "number": "5+", "label": "Certificaciones", "description": "En IA, seguridad y tecnología" },
+    { "number": "15+", "label": "Tecnologías", "description": "Dominadas en desarrollo y automatización" },
+    { "number": "3", "label": "Proyectos Completados", "description": "Sitios web y automatizaciones" }
+  ],
+  "experience": [
+    {
+      "id": "freelance-moros",
+      "role": "Desarrollador Web Freelance",
+      "company": "Proyecto oficial para Comparsa Moros Almohábenos",
+      "period": "2024 - Presente",
+      "location": "Orihuela, Alicante",
+      "type": "Freelance",
+      "description": "Desarrollo completo de la plataforma digital oficial de la comparsa festera más emblemática de Orihuela.",
+      "responsibilities": [
+        "Creación y despliegue de web institucional completa con diseño responsive",
+        "Desarrollo de zona de socios con sistema de autenticación",
+        "Implementación de sistema de galería multimedia y calendario de eventos",
+        "Optimización SEO y rendimiento para máxima visibilidad online"
+      ],
+      "technologies": ["Astro", "React", "TypeScript", "TailwindCSS", "MySQL", "GitHub", "GitHub Pages"],
+      "achievements": [
+        "Proyecto desarrollado en 3 meses cumpliendo todos los deadlines",
+        "Incremento del 200% en visibilidad online de la comparsa",
+        "Sistema de gestión de contenido intuitivo para el cliente"
+      ],
+      "current": true
+    },
+    {
+      "id": "convotis-tech",
+      "role": "Técnico en Sistemas",
+      "company": "Convotis Iberia",
+      "period": "2023 - 2024",
+      "location": "Alicante, España",
+      "type": "Tiempo completo",
+      "description": "Administración de infraestructura IT y desarrollo de automatizaciones para optimizar procesos corporativos.",
+      "responsibilities": [
+        "Administración de usuarios y grupos mediante Active Directory",
+        "Soporte técnico especializado y gestión de incidencias de infraestructura",
+        "Automatización de tareas de mantenimiento y procesos corporativos con Make/n8n",
+        "Colaboración en proyectos de seguridad avanzada y protección de datos"
+      ],
+      "technologies": ["Active Directory", "Make", "n8n", "Windows Server", "PowerShell", "MySQL"],
+      "achievements": [
+        "Reducción del 40% en tiempo de resolución de incidencias",
+        "Automatización de 15+ procesos manuales recurrentes",
+        "Implementación de medidas de seguridad que redujeron incidentes en 60%"
+      ],
+      "current": false
+    }
+  ],
+  "education": [
+    {
+      "id": "asir",
+      "degree": "Grado Superior en Administración de Sistemas Informáticos en Red (ASIR)",
+      "institution": "IES Las Espeñetas",
+      "location": "Orihuela, Alicante",
+      "period": "2022 - 2024",
+      "status": "Completado",
+      "description": "Formación especializada en administración de sistemas, redes y seguridad informática.",
+      "subjects": [
+        "Administración de Sistemas Operativos",
+        "Redes Locales y Seguridad",
+        "Servicios de Red e Internet",
+        "Bases de Datos",
+        "Programación y Scripting"
+      ]
+    },
+    {
+      "id": "bachillerato",
+      "degree": "Bachillerato de Ciencias",
+      "institution": "IES Las Espeñetas",
+      "location": "Orihuela, Alicante",
+      "period": "2020 - 2022",
+      "status": "Completado",
+      "description": "Formación científico-técnica con especialización en matemáticas y tecnología."
+    }
+  ],
+  "certifications": [
+    {
+      "id": "bootcamp-ia",
+      "name": "Bootcamp en Inteligencia Artificial",
+      "issuer": "Convotis/Accenture",
+      "date": "Junio 2024",
+      "duration": "160 horas",
+      "description": "Formación intensiva en IA, machine learning y automatización de procesos.",
+      "skills": ["Machine Learning", "Python", "TensorFlow", "Automatización", "Análisis de Datos"],
+      "credentialUrl": "#"
+    },
+    {
+      "id": "spear-phishing",
+      "name": "Protección contra Spear Phishing",
+      "issuer": "MetaCompliance",
+      "date": "Marzo 2024",
+      "description": "Certificación en seguridad informática y protección contra ataques dirigidos.",
+      "credentialUrl": "#"
+    },
+    {
+      "id": "ransomware",
+      "name": "Protección contra Ransomware",
+      "issuer": "MetaCompliance",
+      "date": "Julio 2024",
+      "description": "Especialización en prevención y mitigación de ataques de ransomware.",
+      "credentialUrl": "#"
+    },
+    {
+      "id": "data-protection",
+      "name": "Data Protection Training",
+      "issuer": "MetaCompliance",
+      "date": "Marzo 2024",
+      "description": "Formación en protección de datos y cumplimiento GDPR.",
+      "credentialUrl": "#"
+    }
+  ],
+  "skills": {
+    "languages": [
+      { "name": "JavaScript", "level": 90, "category": "Frontend" },
+      { "name": "TypeScript", "level": 85, "category": "Frontend" },
+      { "name": "Python", "level": 80, "category": "Backend" },
+      { "name": "Java", "level": 75, "category": "Backend" },
+      { "name": "SQL", "level": 85, "category": "Database" },
+      { "name": "PowerShell", "level": 70, "category": "Scripting" }
+    ],
+    "frontend": [
+      { "name": "React", "level": 90, "category": "Framework" },
+      { "name": "Next.js", "level": 85, "category": "Framework" },
+      { "name": "Astro", "level": 80, "category": "Framework" },
+      { "name": "TailwindCSS", "level": 95, "category": "Styling" },
+      { "name": "HTML5", "level": 95, "category": "Markup" },
+      { "name": "CSS3", "level": 90, "category": "Styling" }
+    ],
+    "backend": [
+      { "name": "Node.js", "level": 80, "category": "Runtime" },
+      { "name": "Express.js", "level": 75, "category": "Framework" },
+      { "name": "MySQL", "level": 85, "category": "Database" },
+      { "name": "PostgreSQL", "level": 70, "category": "Database" },
+      { "name": "REST APIs", "level": 85, "category": "Architecture" }
+    ],
+    "automation": [
+      { "name": "Make (Integromat)", "level": 90, "category": "Automation" },
+      { "name": "n8n", "level": 85, "category": "Automation" },
+      { "name": "Zapier", "level": 75, "category": "Automation" },
+      { "name": "GitHub Actions", "level": 80, "category": "CI/CD" }
+    ],
+    "tools": [
+      { "name": "Git", "level": 90, "category": "Version Control" },
+      { "name": "GitHub", "level": 90, "category": "Platform" },
+      { "name": "VS Code", "level": 95, "category": "IDE" },
+      { "name": "Active Directory", "level": 85, "category": "System Admin" },
+      { "name": "Windows Server", "level": 80, "category": "System Admin" },
+      { "name": "Docker", "level": 70, "category": "DevOps" }
+    ]
+  },
+  "projects": [
+    {
+      "id": "moros-almohabenos",
+      "title": "Moros Almohábenos - Sitio Web Oficial",
+      "subtitle": "Plataforma digital completa para comparsa festera",
+      "description": "Desarrollo integral de la plataforma digital oficial de la Comparsa Moros Almohábenos de Orihuela. Incluye sistema de gestión de contenido, galería multimedia interactiva, calendario de eventos, zona de socios con autenticación, y sección histórica completa.",
+      "longDescription": "Este proyecto representa el desarrollo completo de la presencia digital de una de las comparsas festeras más emblemáticas de Orihuela. La plataforma incluye un sistema de gestión de contenido personalizado, galería multimedia con categorización automática, calendario de eventos sincronizado, zona privada para socios con diferentes niveles de acceso, y una completa sección histórica con timeline interactivo.",
+      "image": "/images/projects/moros-almohabenos.jpg",
+      "images": [
+        "/images/projects/moros-almohabenos-1.jpg",
+        "/images/projects/moros-almohabenos-2.jpg",
+        "/images/projects/moros-almohabenos-3.jpg"
+      ],
+      "technologies": ["Astro", "React", "TypeScript", "TailwindCSS", "MySQL", "GitHub Pages"],
+      "category": "Web Development",
+      "status": "Completado",
+      "year": "2024",
+      "duration": "3 meses",
+      "team": "Individual",
+      "role": "Full-Stack Developer",
+      "challenges": [
+        "Integración de sistema de autenticación personalizado",
+        "Optimización de carga de imágenes para galería multimedia",
+        "Implementación de calendario sincronizado con eventos",
+        "Diseño responsive para múltiples dispositivos"
+      ],
+      "solutions": [
+        "Desarrollo de middleware de autenticación con JWT",
+        "Implementación de lazy loading y compresión de imágenes",
+        "Integración con Google Calendar API",
+        "Diseño mobile-first con breakpoints optimizados"
+      ],
+      "results": [
+        "200% incremento en visibilidad online",
+        "Reducción del 50% en consultas administrativas",
+        "95+ puntuación en Lighthouse",
+        "100% satisfacción del cliente"
+      ],
+      "links": {
+        "live": "https://morosalmohabenos.com",
+        "github": "https://github.com/Jusdorado/moros-almohabenos",
+        "case_study": "#"
+      },
+      "featured": true
+    },
+    {
+      "id": "automation-workflows",
+      "title": "Automatizaciones Empresariales",
+      "subtitle": "Flujos de trabajo con Make & n8n",
+      "description": "Desarrollo de múltiples flujos de automatización para procesos corporativos, incluyendo gestión de leads, sincronización de datos, notificaciones automáticas y reportes dinámicos.",
+      "longDescription": "Conjunto de automatizaciones desarrolladas para optimizar procesos empresariales mediante Make y n8n. Incluye automatización de gestión de leads desde formularios web hasta CRM, sincronización bidireccional entre diferentes plataformas, sistema de notificaciones inteligentes, y generación automática de reportes con análisis de KPIs.",
+      "image": "/images/projects/automation.jpg",
+      "technologies": ["Make", "n8n", "Zapier", "Google Sheets", "Slack", "Webhook APIs"],
+      "category": "Automation",
+      "status": "En desarrollo",
+      "year": "2023-2024",
+      "duration": "Ongoing",
+      "team": "Individual",
+      "role": "Automation Specialist",
+      "challenges": [
+        "Integración entre múltiples APIs con diferentes formatos",
+        "Manejo de rate limits y errores de conexión",
+        "Sincronización de datos en tiempo real",
+        "Escalabilidad de los flujos de trabajo"
+      ],
+      "solutions": [
+        "Desarrollo de middleware de normalización de datos",
+        "Implementación de sistema de reintentos y fallbacks",
+        "Uso de webhooks para actualizaciones instantáneas",
+        "Arquitectura modular para fácil escalabilidad"
+      ],
+      "results": [
+        "40% reducción en tiempo de procesamiento",
+        "15+ procesos automatizados",
+        "99.9% uptime en automatizaciones críticas",
+        "ROI del 300% en primer año"
+      ],
+      "links": {
+        "case_study": "#",
+        "demo": "#"
+      },
+      "featured": true
+    },
+    {
+      "id": "network-administration",
+      "title": "Administración de Sistemas y Redes",
+      "subtitle": "Infraestructura IT empresarial",
+      "description": "Gestión completa de infraestructura IT incluyendo Active Directory, administración de servidores Windows, implementación de políticas de seguridad y soporte técnico especializado.",
+      "longDescription": "Proyecto integral de administración de sistemas en entorno empresarial. Incluye configuración y mantenimiento de Active Directory con más de 200 usuarios, administración de servidores Windows Server, implementación de políticas de grupo, gestión de backups automatizados, y desarrollo de scripts PowerShell para automatización de tareas administrativas.",
+      "image": "/images/projects/network-admin.jpg",
+      "technologies": ["Active Directory", "Windows Server", "PowerShell", "Group Policy", "Backup Solutions"],
+      "category": "System Administration",
+      "status": "Completado",
+      "year": "2023-2024",
+      "duration": "12 meses",
+      "team": "Equipo de 3",
+      "role": "System Administrator",
+      "challenges": [
+        "Migración de sistemas legacy sin downtime",
+        "Implementación de políticas de seguridad estrictas",
+        "Automatización de procesos manuales repetitivos",
+        "Gestión de usuarios en múltiples ubicaciones"
+      ],
+      "solutions": [
+        "Planificación de migración por fases con rollback",
+        "Implementación gradual de GPOs con testing",
+        "Desarrollo de scripts PowerShell personalizados",
+        "Configuración de replicación entre sitios"
+      ],
+      "results": [
+        "Zero downtime durante migraciones",
+        "60% reducción en incidentes de seguridad",
+        "80% automatización de tareas administrativas",
+        "Mejora del 50% en tiempo de respuesta"
+      ],
+      "links": {
+        "case_study": "#"
+      },
+      "featured": false
+    }
+  ],
+  "services": [
+    {
+      "id": "web-development",
+      "title": "Desarrollo Web",
+      "description": "Sitios web modernos y aplicaciones web con tecnologías de vanguardia",
+      "icon": "Code",
+      "features": [
+        "Desarrollo Frontend con React/Next.js",
+        "Backend con Node.js y APIs REST",
+        "Diseño responsive y mobile-first",
+        "Optimización SEO y rendimiento",
+        "Integración con CMS y bases de datos"
+      ],
+      "technologies": ["React", "Next.js", "TypeScript", "TailwindCSS", "Node.js"],
+      "startingPrice": "Desde 800€"
+    },
+    {
+      "id": "automation",
+      "title": "Automatización de Procesos",
+      "description": "Optimiza tu negocio con automatizaciones inteligentes y flujos de trabajo eficientes",
+      "icon": "Zap",
+      "features": [
+        "Automatización con Make y n8n",
+        "Integración entre plataformas",
+        "Flujos de trabajo personalizados",
+        "Sincronización de datos",
+        "Reportes automáticos"
+      ],
+      "technologies": ["Make", "n8n", "Zapier", "APIs", "Webhooks"],
+      "startingPrice": "Desde 300€"
+    },
+    {
+      "id": "system-admin",
+      "title": "Administración de Sistemas",
+      "description": "Gestión profesional de infraestructura IT y redes empresariales",
+      "icon": "Server",
+      "features": [
+        "Administración Active Directory",
+        "Gestión de servidores Windows",
+        "Políticas de seguridad",
+        "Soporte técnico especializado",
+        "Automatización con PowerShell"
+      ],
+      "technologies": ["Active Directory", "Windows Server", "PowerShell", "Group Policy"],
+      "startingPrice": "Consultar"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "moros-president",
+      "name": "Presidente Moros Almohábenos",
+      "role": "Presidente de la Comparsa",
+      "company": "Moros Almohábenos",
+      "content": "Justo ha transformado completamente nuestra presencia digital. El sitio web no solo es visualmente impresionante, sino que también ha mejorado significativamente nuestra comunicación con los socios y la visibilidad de nuestros eventos.",
+      "rating": 5,
+      "image": "/images/testimonials/moros-president.jpg"
+    },
+    {
+      "id": "convotis-manager",
+      "name": "Manager IT",
+      "role": "Responsable de Sistemas",
+      "company": "Convotis Iberia",
+      "content": "Las automatizaciones desarrolladas por Justo han revolucionado nuestros procesos internos. Su capacidad para identificar oportunidades de mejora y implementar soluciones eficientes es excepcional.",
+      "rating": 5,
+      "image": "/images/testimonials/convotis-manager.jpg"
+    }
+  ],
+  "cta": {
+    "title": "¿Tienes un proyecto en mente?",
+    "subtitle": "Hablemos sobre cómo puedo ayudarte a llevarlo al siguiente nivel",
+    "description": "Estoy siempre interesado en nuevas oportunidades y proyectos emocionantes. Ya sea desarrollo web, automatización de procesos o administración de sistemas, me encantaría conocer más sobre tu proyecto.",
+    "primaryButton": "Iniciar Conversación",
+    "secondaryButton": "Ver Proyectos"
+  }
+}
