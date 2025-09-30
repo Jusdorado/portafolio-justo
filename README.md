@@ -65,17 +65,19 @@ HCAPTCHA_SITE_KEY=tu-site-key
 HCAPTCHA_SECRET_KEY=tu-secret-key
 ```
 
-## 🌐 Deploy
+## 🌐 Deploy en GitHub Pages
 
-**Vercel** (Recomendado)
-1. Conecta tu repo en [vercel.com](https://vercel.com)
-2. Configura las variables de entorno
-3. ¡Deploy automático!
+**Configuración automática:**
+1. El proyecto ya está configurado para GitHub Pages
+2. Usa exportación estática (`output: 'export'`)
+3. Deploy automático con GitHub Actions
 
-**Netlify**
-1. Conecta tu repo en [netlify.com](https://netlify.com)
-2. Build command: `npm run build && npm run export`
-3. Publish directory: `out`
+**Comandos de build:**
+```bash
+npm run build    # Genera la carpeta 'out' para GitHub Pages
+```
+
+**URL del sitio:** `https://jusdorado.github.io/portafolio-justo/`
 
 ---
 
