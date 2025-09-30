@@ -53,7 +53,7 @@ const Testimonials = () => {
           <div className="relative z-10 text-center">
             {/* Stars */}
             <div className="flex justify-center mb-6">
-              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+              {[...Array(testimonials[currentIndex]?.rating || 5)].map((_, i) => (
                 <Star
                   key={i}
                   className="w-5 h-5 text-gold-400 fill-current"
@@ -63,25 +63,25 @@ const Testimonials = () => {
 
             {/* Quote */}
             <blockquote className="text-xl md:text-2xl text-moka-700 font-serif leading-relaxed mb-8 max-w-3xl mx-auto">
-              "{testimonials[currentIndex].content}"
+              "{testimonials[currentIndex]?.content || ''}"
             </blockquote>
 
             {/* Author */}
             <div className="flex items-center justify-center">
               <div className="w-16 h-16 bg-gradient-gold rounded-full flex items-center justify-center mr-4">
                 <span className="text-xl font-bold text-moka-900">
-                  {testimonials[currentIndex].name.charAt(0)}
+                  {testimonials[currentIndex]?.name?.charAt(0) || 'T'}
                 </span>
               </div>
               <div className="text-left">
                 <h4 className="font-bold text-moka-700">
-                  {testimonials[currentIndex].name}
+                  {testimonials[currentIndex]?.name || 'Testimonio'}
                 </h4>
                 <p className="text-moka-500 text-sm">
-                  {testimonials[currentIndex].role}
+                  {testimonials[currentIndex]?.role || 'Cliente'}
                 </p>
                 <p className="text-gold-600 text-sm font-medium">
-                  {testimonials[currentIndex].company}
+                  {testimonials[currentIndex]?.company || 'Empresa'}
                 </p>
               </div>
             </div>
