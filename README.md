@@ -135,6 +135,40 @@ Portafolio profesional desarrollado con Next.js, TypeScript, TailwindCSS y Frame
    HCAPTCHA_SECRET_KEY=tu-secret-key
    ```
 
+## 🌐 Ramas de Despliegue
+
+Este repositorio tiene **4 ramas idénticas** para diferentes servicios de hosting:
+
+### 📋 Estructura de Ramas
+
+- **`main`** 🏠 - Rama principal con el código base completo
+- **`netlify`** 🟢 - Rama específica para despliegue en Netlify
+- **`vercel`** ⚡ - Rama específica para despliegue en Vercel  
+- **`github-pages`** 📄 - Rama específica para GitHub Pages
+
+### 🔄 Sincronización de Ramas
+
+Todas las ramas están **exactamente iguales** y contienen:
+- ✅ Logo café + código rediseñado
+- ✅ Header completamente responsivo
+- ✅ Stats limpias sin círculos amarillos
+- ✅ Overflow horizontal eliminado
+- ✅ Menú móvil funcional
+- ✅ Pantalla de carga épica
+
+### 🚀 Comandos para Cambiar de Rama
+
+```bash
+# Cambiar a rama específica para desplegar
+git checkout main          # Rama principal
+git checkout netlify       # Para Netlify
+git checkout vercel        # Para Vercel
+git checkout github-pages  # Para GitHub Pages
+
+# Ver todas las ramas disponibles
+git branch -a
+```
+
 ## 🚀 Deploy
 
 ### Deploy en Vercel
