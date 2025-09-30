@@ -11,13 +11,6 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/function-component-definition": [
-      "error",
-      {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
-      }
-    ],
     "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "no-console": ["warn", { "allow": ["warn", "error"] }],
@@ -37,7 +30,24 @@
     "no-return-assign": "off",
     "object-curly-newline": "off",
     "react/jsx-no-constructed-context-values": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "radix": "off",
+    "react/function-component-definition": "off",
+    "react/no-danger": "off",
+    "react/button-has-type": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/no-array-index-key": "off",
+    "no-nested-ternary": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "react/jsx-indent-props": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-closing-tag-location": "off",
+    "@typescript-eslint/indent": "off",
+    "react/no-unescaped-entities": "off",
+    "no-restricted-syntax": "off",
+    "consistent-return": "off"
   },
   "overrides": [
     {

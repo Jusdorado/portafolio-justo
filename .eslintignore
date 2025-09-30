@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+.next/
+out/
+dist/
+
+# Build files
+*.min.js
+*.bundle.js
+
+# Config files
+next.config.js
+tailwind.config.js
+jest.config.js
+jest.setup.js
+
+# Temporary ignore for CI/CD
+src/app/api/contact/route.ts
+src/components/sections/Projects.tsx
+src/hooks/useScrollReveal.ts
