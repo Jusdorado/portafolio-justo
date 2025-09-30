@@ -38,6 +38,8 @@ export const useScrollReveal = (options: UseScrollRevealOptions = {}) => {
     } else if (!triggerOnce) {
       setIsVisible(false);
     }
+    // Siempre retornar una función de cleanup (aunque sea vacía)
+    return () => {};
   }, [inView, delay, triggerOnce]);
 
   return { ref, isVisible };
@@ -70,6 +72,8 @@ export const useStaggeredReveal = (itemCount: number, staggerDelay: number = 100
         timers.forEach(timer => clearTimeout(timer));
       };
     }
+    // Siempre retornar una función de cleanup
+    return () => {};
   }, [inView, itemCount, staggerDelay]);
 
   return { ref, visibleItems };
